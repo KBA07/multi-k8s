@@ -10,14 +10,14 @@ script:
   - docker run kba0708/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t kba0708/multi-client ./client
-  - docker build -t kba0708/multi-nginx ./nginx
-  - docker build -t kba0708/multi-server ./server
-  - docker build -t kba0708/multi-worker ./worker
+  - docker build -t kba7/multi-client ./client
+  - docker build -t kba7/multi-nginx ./nginx
+  - docker build -t kba7/multi-server ./server
+  - docker build -t kba7/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  - docker push kba0708/multi-client
-  - docker push kba0708/multi-nginx
-  - docker push kba0708/multi-server
-  - docker push kba0708/multi-worker
+  - docker push kba7/multi-client
+  - docker push kba7/multi-nginx
+  - docker push kba7/multi-server
+  - docker push kba7/multi-worker
